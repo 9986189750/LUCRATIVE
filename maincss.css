@@ -1,0 +1,53 @@
+
+
+
+
+
+/* ------------------------------------------------------------------------------
+	 Serives
+-------------------------------------------------------------------------------*/
+.service-section {
+	padding-top: 100px;
+}
+.services {
+	margin-bottom: 50px;
+}
+.services-content {
+	padding: 30px 20px 20px 89px;
+	/* margin-top: 30px; */
+	background: #ffffff;
+	border: 1px solid #cecece;
+	text-align: left;
+	position: relative;
+	/* z-index: 9; */
+	box-shadow: 2px 2px 4px rgba(72, 72, 72, 0.34);
+}
+.services-content:before {
+    content: '';
+    background: #27c0ca;
+    padding: 2px;
+    width: 100%;
+    top: -8px;
+    right: -8px;
+    position: absolute;
+    z-index: -1;
+    bottom: 4px;
+    -ms-transform: rotate(4deg); /* IE 9 */
+    -webkit-transform: rotate(4deg); /* Safari */
+    transform: rotate(4deg);
+}
+.services .icon {
+	color: #9e015e;
+	font-size: 38px;
+	/* padding-left: 15px; */
+	float: left;
+	/* background: #9e015e; */
+	width: 90px;
+	position: absolute;
+	top: 40%;
+	bottom: 0;
+	left: 12px;
+	/* border-top: 1px solid #03a9f4; */
+	z-index: 9;
+}
+/* ------------------------------------------------------------------------------
