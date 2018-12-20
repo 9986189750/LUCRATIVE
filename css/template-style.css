@@ -324,7 +324,7 @@ video {
   font-size: 0.75rem;
   padding: 0.7em 1.25em;
   text-transform:uppercase;
-
+  font-family:open sans ! important;
   font-weight:bold;
 }
 nav {
