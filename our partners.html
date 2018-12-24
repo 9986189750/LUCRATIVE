@@ -20,18 +20,42 @@
     <script type="text/javascript" src="js/validation.js"></script> 
 		<!--zoom in files-->
 	<link href="zoomin/css/animate.css" rel="stylesheet">
+		<!--modal-->
+	<link rel="stylesheet" href="modal/assets/css/bootstrap.css">	
+	<script src="modal/assets/js/jquery.min.js"></script>
+	<script src="modal/assets/js/bootstrap.js"></script>	
 	<style>
 		.xses{
 			height:55px ! important;
 			width:285px ! important;
 		}
+		.blue{
+			color:blue;
+			}
+			.red{
+			color:red;
+			}
+			.skyblue{
+			color:skyblue
+			}
+			h2{
+			 color:#03F;
+			}
+			#wrapper{
+			 border:1px solid #000 ;
+			 padding-bottom:20px;
+			 margin-top:10%;
+			 
+			}
 	</style>
 	
   </head> 
   
   <body class="size-1140">
   	<!-- CONTACT LUCRATIVE BUTTON -->
-  	<a  href="contact.html" style="position:fixed;top:120px;right:-14px;z-index:10;"><img src="img/premium-features.png" alt=""></a>
+  	<a  href="contact.html" style="position:fixed;top:120px;right:-14px;z-index:10;">
+	<img src="img/premium-features.png" alt="">
+	</a>
     <!-- HEADER -->
     <header role="banner">    
       <!-- Top Bar -->
@@ -44,12 +68,7 @@
           </div>
           <div class="s-12 m-6 l-6">
             <div class="right">
-              <ul class="top-bar-social right">
-                <li><a href="/"><i class="icon-facebook_circle text-orange-hover"></i></a></li>
-                <li><a href="/"><i class="icon-twitter_circle text-orange-hover"></i></a> </li>
-                <li><a href="/"><i class="icon-google_plus_circle text-orange-hover"></i></a></li>
-                <li><a href="/"><i class="icon-instagram_circle text-orange-hover"></i></a></li>
-              </ul>
+              <button type="button" class="btn btn-success btn-sm" data-target="#mycontact" data-toggle="modal" style="margin-top:5px;">Calculate Your EMI</button>
             </div>
           </div>
         </div>
@@ -68,9 +87,6 @@
 			  <li><a href="about.html">About Us</a></li>
               <li><a href="premium.html">Products & Services</a></li>
               <li><a href="our partners.html">Our Partners</a> </li>
-               
-             
-              
               <li><a href="gallery.html">Testimonials</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -196,7 +212,61 @@
   </div>
 </section>
     </main>
+        <!--modal starts-->
+		<div class="modal fade" id="mycontact" role="dialog">
+		<div class="dialog">
+		<div class="modal-dialog">
+		<div class="modal-content">
+		<div class="modal-header"><a href="#" class="close" data-dismiss="modal">&times;</a></div>
+		<div class="modal-body">
+		<div class="row">		
+		<div class="col-sm-12">
+		
+		<!--emi calculator-->
+		  <div id="wrapper" class="col-lg-12">
+ <h2 class="text-center"> EMI Calculator </h2>
+   <table width="95%" align="center">
+    <tr>
+    <td width="147"> Loan Amount   </td>
+     <td width="193"> <input type="text" id="prncipleAmount" name="prncipleAmount" required class="form-control" placeholder="Enter Loan Amount"/> </td> 
+    </tr>
+    <tr>
+    <td> Interest Rate </td>
+     <td width="193" style="padding-top:10px;"><input type="text" id="InterestRate" name="InterestRate" required class="form-control" placeholder="Enter Rate of Interest"/> </td>
+    </tr>
+    <tr>
+    <td>
+      Loan Period (in month)
+    </td>
+     <td style="padding-top:10px;">
+       <input type="text" id="emiMonth" name="emiMonth" required class="form-control" placeholder="Enter Period in Month"/>
+     </td>
     
+    </tr>
+    <tr>
+      <td style="padding-top:10px; " colspan="2">
+       <button class="btn btn-success btn-block" onclick="EmiCalculaor();"> Calculate EMI </button>	   
+     </td>
+    </tr>
+   </table>
+
+  <div id="result" align="center" style="color:#006;margin-top:20px;">    </div></div>
+		
+		<!--emi calculator-->		
+		
+		</div>
+		
+		</div>
+		</div>
+		<div class="modal-footer">
+		<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		
+	<!--modal ends-->
     <!--FOOTER -->
     <footer>
       <!-- Main Footer -->
@@ -288,6 +358,30 @@
         </div>
       </section>
     </footer> 
+	<script>
+function EmiCalculaor(){
+    
+   
+ var month = $("#emiMonth").val();
+ var rate = $("#InterestRate").val();
+ var pamt = $("#prncipleAmount").val();
+  
+  var monthlyInterestRatio = (rate/100)/12;
+  var monthlyInterest = (monthlyInterestRatio*pamt);
+     var top = Math.pow((1+monthlyInterestRatio),month);
+         var bottom = top -1;
+         var sp = top / bottom;
+         var emi = ((pamt * monthlyInterestRatio) * sp);
+  var result = emi.toFixed(2);
+  var totalAmount = emi*month;
+  var yearlyInteret = totalAmount-pamt;
+  var downPayment = pamt*(20/100);
+     //alert(emi);
+  $("#result").empty();
+  $("#result").append("Your EMI = "+result);
+    
+}
+</script>
     <script type="text/javascript" src="js/responsee.js"></script>
     <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
     <script type="text/javascript" src="js/template-scripts.js"></script>
