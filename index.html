@@ -29,7 +29,10 @@
 	<script src="op/js/jquery.min.js" type="text/javascript" ></script>
 	<script src="op/carousel/slick.js" type="text/javascript" charset="utf-8"></script>
 	
-	
+		<!--modal-->
+		<script src="modal/assets/js/bootstrap.js"></script>		
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+				
 	<!-- why lucrative scroll function-->
 	<link rel="stylesheet" href="scrollfunction.css">
 	<link rel="stylesheet" href="3dbutton.css">
@@ -37,6 +40,9 @@
 	<link href="zoomin/css/animate.css" rel="stylesheet">
 	<!--readmore button-->
     <link rel="stylesheet" href="readmore/css/style.css">
+	
+	<!--preloader-->
+	
 	<style>
 		.gototop{
 			width:45px;
@@ -99,13 +105,55 @@
 			width: 45px;
 		}
 		
-			
-				
+		#preloader  {
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background-color: #fefefe;
+     z-index: 99;
+    height: 100%;
+ }
+	#status  {
+     width: 200px;
+     height: 200px;
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     background-image: url(ajax-loader.gif);
+     background-repeat: no-repeat;
+     background-position: center;
+     margin: -100px 0 0 -100px;
+ }
+	.blue{
+		color:blue;
+		}
+		.red{
+		color:red;
+		}
+		.skyblue{
+		color:skyblue
+		}
+		h2{
+		 color:#03F;
+		}
+		#wrapper{
+		 border:1px solid #000 ;
+		 padding-bottom:20px;
+		 margin-top:10%;
+		 
+		}
+		
+		
 	</style>
   </head>  
   
   <body class="size-1140">
-
+	<div id="preloader">
+	<div id="status">&nbsp;</div>
+	</div>
+</div>
   	<!-- CONTACT LUCRATIVE BUTTON -->
   	<a  href="contact.html" style="position:fixed;top:120px;right:-14px;z-index:10;"><img src="img/premium-features.png" alt=""></a>
     <!-- HEADER -->
@@ -120,12 +168,7 @@
           </div>
           <div class="s-12 m-6 l-6">
             <div class="right">
-              <ul class="top-bar-social right">
-                <li><a href="/"><i class="icon-facebook_circle text-orange-hover"></i></a></li>
-                <li><a href="/"><i class="icon-twitter_circle text-orange-hover"></i></a> </li>
-                <li><a href="/"><i class="icon-google_plus_circle text-orange-hover"></i></a></li>
-                <li><a href="/"><i class="icon-instagram_circle text-orange-hover"></i></a></li>
-              </ul>
+              <button type="button" style="margin-top:5px;" class="btn btn-success button-sm" data-target="#mycontact" data-toggle="modal">Calculate your EMI</button>
             </div>
           </div>
         </div>
@@ -418,6 +461,62 @@
 	</div>
     </section>
 	<!--pannels end-->
+	<!--modal starts-->
+		<div class="modal fade" id="mycontact" role="dialog">
+		<div class="dialog">
+		<div class="modal-dialog">
+		<div class="modal-content">
+		<div class="modal-header"><a href="#" class="close" data-dismiss="modal">&times;</a></div>
+		<div class="modal-body">
+		<div class="row">		
+		<div class="col-sm-12">
+		
+		<!--emi calculator-->
+		  <div id="wrapper" class="col-lg-12">
+ <h2 class="text-center"> EMI Calculator </h2>
+   <table width="95%" align="center">
+    <tr>
+    <td width="147"> Loan Amount   </td>
+     <td width="193"> <input type="text" id="prncipleAmount" name="prncipleAmount" required class="form-control" placeholder="Enter Loan Amount"/> </td> 
+    </tr>
+    <tr>
+    <td> Interest Rate </td>
+     <td width="193" style="padding-top:10px;"><input type="text" id="InterestRate" name="InterestRate" required class="form-control" placeholder="Enter Rate of Interest"/> </td>
+    </tr>
+    <tr>
+    <td>
+      Loan Period (in month)
+    </td>
+     <td style="padding-top:10px;">
+       <input type="text" id="emiMonth" name="emiMonth" required class="form-control" placeholder="Enter Period in Month"/>
+     </td>
+    
+    </tr>
+    <tr>
+      <td style="padding-top:10px; " colspan="2">
+       <button class="btn btn-success btn-block" onclick="EmiCalculaor();"> Calculate EMI </button>	   
+     </td>
+    </tr>
+   </table>
+
+  <div id="result" align="center" style="color:#006;margin-top:20px;">    </div></div>
+		
+		<!--emi calculator-->		
+		
+		</div>
+		
+		</div>
+		</div>
+		<div class="modal-footer">
+		<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		
+	
+	<!--modal ends-->
 	
 	  <!-- why lucarative section added extra -->
 	  <section class="section background-white wow zoomIn" >
@@ -666,7 +765,40 @@ function myFunction() {
     <script type="text/javascript" src="js/responsee.js"></script>
     <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
     <script type="text/javascript" src="js/template-scripts.js"></script>  
-	
+	<script>
+		// makes sure the whole site is loaded
+		jQuery(window).load(function() {
+				// will first fade out the loading animation
+			jQuery("#status").fadeOut();
+				// will fade out the whole DIV that covers the website.
+			jQuery("#preloader").delay(1000).fadeOut("slow");
+		})
+	</script>
+	<!-- script for calculating EMI -->
+	<script>
+function EmiCalculaor(){
+    
+   
+ var month = $("#emiMonth").val();
+ var rate = $("#InterestRate").val();
+ var pamt = $("#prncipleAmount").val();
+  
+  var monthlyInterestRatio = (rate/100)/12;
+  var monthlyInterest = (monthlyInterestRatio*pamt);
+     var top = Math.pow((1+monthlyInterestRatio),month);
+         var bottom = top -1;
+         var sp = top / bottom;
+         var emi = ((pamt * monthlyInterestRatio) * sp);
+  var result = emi.toFixed(2);
+  var totalAmount = emi*month;
+  var yearlyInteret = totalAmount-pamt;
+  var downPayment = pamt*(20/100);
+     //alert(emi);
+  $("#result").empty();
+  $("#result").append("Your EMI = "+result);
+    
+}
+</script>
 		<!--panels-->
 	<script src="panel/lib/wow/wow.min.js"></script>
 	<script src="panel/js/main.js"></script>
