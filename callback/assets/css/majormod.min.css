@@ -1,0 +1,36 @@
+.btn{
+	font-weight:bold;
+	font-size:11px;
+	padding:7px 26px;
+	color:#b5b9bf;
+	letter-spacing:1.5px;
+	}
+.btn:hover{
+	cursor:pointer;
+	}
+.btn-info,.btn-info:hover{
+	background-color:#23b7a8;
+	border-color:#23b7a8;
+	color:#fff;
+	}
+.input-group .form-control{
+	-webkit-box-shadow:none;
+	border:none;
+	padding:7px 26px;
+	border-radius:100px;
+	}
+.form-round .input-group{
+	background-color:#fff;
+	border-radius:100px;
+	border:1px solid #ebebeb;
+	float:right;	
+	}
+.form-round .input-group .input-group-btn .btn{
+	border-radius:100px;
+	}
+.py-40{
+	padding-top:10px;
+	padding-bottom:10px;
+	}
+
+

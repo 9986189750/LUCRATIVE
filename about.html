@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<link href="favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LASOLUTIONS</title>
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/responsee.css">
+    <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+    <!-- CUSTOM STYLE -->
+    <link rel="stylesheet" href="css/template-style.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>    
+    <script type="text/javascript" src="js/validation.js"></script> 
+		<!--zoom in files-->
+	<link href="zoomin/css/animate.css" rel="stylesheet">
+		<!--modal-->
+	<link rel="stylesheet" href="modal/assets/css/bootstrap.css">	
+	<script src="modal/assets/js/jquery.min.js"></script>
+	<script src="modal/assets/js/bootstrap.js"></script>	
+	<style>
+			.blue{
+			color:blue;
+			}
+			.red{
+			color:red;
+			}
+			.skyblue{
+			color:skyblue
+			}
+			h2{
+			 color:#03F;
+			}
+			#wrapper{
+			 border:1px solid #000 ;
+			 padding-bottom:20px;
+			 margin-top:10%;
+			 
+			}
+	</style>	
+  </head>  
+  
+  <body class="size-1140">
+  	<!-- PREMIUM FEATURES BUTTON -->
+  	<a  href="contact.html" style="position:fixed;top:120px;right:-14px;z-index:10;"><img src="img/premium-features.png" alt=""></a>
+    <!-- HEADER -->
+    <header role="banner">    
+      <!-- Top Bar -->
+      <div class="top-bar background-white">
+        <div class="line">
+          <div class="s-12 m-6 l-6">
+            <div class="top-bar-contact">
+              <p class="text-size-12">Contact Us: 080 4890 7998 | <a class="mailto:lucrative@lasolutions.in">lucrative@lasolutions.in</a></p>
+            </div>
+          </div>
+          <div class="s-12 m-6 l-6">
+            <div class="right">
+              <button type="button" class="btn btn-success btn-sm" data-target="#mycontact" data-toggle="modal" style="margin-top:5px;">Calculate Your EMI</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Top Navigation -->
+      <nav class="background-white background-primary-hightlight">
+        <div class="line">
+          <div class="s-12 l-2">
+            <a href="index.html" class="logo"><img src="img/logo-free.png" alt=""></a>
+          </div>
+          <div class="top-nav s-12 l-10">
+            <p class="nav-text"></p>
+            <ul class="right chevron">
+              <li><a href="index.html">Home</a></li>
+			  <li><a href="about.html">About Us</a></li>
+              <li><a href="premium.html">Products & Services</a></li>
+              <li><a href="our partners.html">Our Partners</a> </li>
+              <li><a href="gallery.html">Testimonials</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <!-- MAIN -->
+    <main role="main">
+      <!-- Content -->
+      <article>
+        <header class="section background-primary text-center">
+            <h1 class="text-white margin-bottom-0 text-size-50 text-thin text-line-height-1">About Us</h1>
+        </header>
+        <div class="section background-white"> 
+		            <div class="line">
+              <div class="margin ">
+					<div class="s-12 m-12 l-6 margin-m-bottom-30 wow bounceIn">
+						<img src="lucrative about us.png" >
+					</div>
+					<div class="s-12 m-12 l-6 wow zoomIn">
+					  <h1>Lucrative Financial Solutions</h1>
+					  <p>
+						Lucrative Solutions is one of India’s well recognized and respected stockbroking and Wealth Management Companies and is known for progressive strategies throughout various trading platforms. Lucrative Solutions is run by a set of experienced Professionals and thrives on providing “Real Value for money” to a diversified client base. We operate on a unique retail focused stock trading model that provides revolutionary trading platforms. We are dedicated to serve individuals and corporate segments with a customer-centric model and custom designed investments through financial products such as equity, derivatives, mutual funds, insurance, portfolio management, financial planning, wealth management, and much more by serving them at their doorstep. As one of the leading wealth managers we are a member of the Bombay Stock Exchange (BSE), National Stock Exchange (NSE) in the country, we additionally oversee compliance by trading and clearing members and listed companies with the rules and regulations of the exchange.
+					  </p>
+					</div>
+              </div>  
+            </div>
+          <div class="line">
+       
+            <blockquote class="margin-top-bottom-20">
+             We are a first generation wealth management company headquartered in Bangalore, India. The company is founded by Abhishek Rangaswamy and is a nationally acclaimed leading stock broking and wealth management firm. 
+            </blockquote>
+          </div>
+        </div> 
+      </article>
+    </main>
+	
+		<!--modal starts-->
+		<div class="modal fade" id="mycontact" role="dialog">
+		<div class="dialog">
+		<div class="modal-dialog">
+		<div class="modal-content">
+		<div class="modal-header"><a href="#" class="close" data-dismiss="modal">&times;</a></div>
+		<div class="modal-body">
+		<div class="row">		
+		<div class="col-sm-12">
+		
+		<!--emi calculator-->
+		  <div id="wrapper" class="col-lg-12">
+ <h2 class="text-center"> EMI Calculator </h2>
+   <table width="95%" align="center">
+    <tr>
+    <td width="147"> Loan Amount   </td>
+     <td width="193"> <input type="text" id="prncipleAmount" name="prncipleAmount" required class="form-control" placeholder="Enter Loan Amount"/> </td> 
+    </tr>
+    <tr>
+    <td> Interest Rate </td>
+     <td width="193" style="padding-top:10px;"><input type="text" id="InterestRate" name="InterestRate" required class="form-control" placeholder="Enter Rate of Interest"/> </td>
+    </tr>
+    <tr>
+    <td>
+      Loan Period (in month)
+    </td>
+     <td style="padding-top:10px;">
+       <input type="text" id="emiMonth" name="emiMonth" required class="form-control" placeholder="Enter Period in Month"/>
+     </td>
+    
+    </tr>
+    <tr>
+      <td style="padding-top:10px; " colspan="2">
+       <button class="btn btn-success btn-block" onclick="EmiCalculaor();"> Calculate EMI </button>	   
+     </td>
+    </tr>
+   </table>
+
+  <div id="result" align="center" style="color:#006;margin-top:20px;">    </div></div>
+		
+		<!--emi calculator-->		
+		
+		</div>
+		
+		</div>
+		</div>
+		<div class="modal-footer">
+		<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		
+	
+	<!--modal ends-->
+    
+    <!--FOOTER -->
+    <footer>
+      <!-- Main Footer -->
+      <section class="section background-dark">
+        <div class="line">
+          <div class="margin">
+            <!-- Collumn 1 -->
+            <div class="s-12 m-12 l-4 margin-m-bottom-2x">
+              <h4 class="text-uppercase text-strong">Our Philosophy</h4>
+              <p class="text-size-20"><em>"dummy text dummy text dummy text"</em><p>
+                            
+              <div class="line">
+                <h4 class="text-uppercase text-strong margin-top-30">About Our Company</h4>
+                <div class="margin">
+                  <div class="s-12 m-12 l-4 margin-m-bottom">
+                    <a class="image-hover-zoom" href="/"><img src="img/blog-04.jpg" alt=""></a>
+                  </div>
+                  <div class="s-12 m-12 l-8 margin-m-bottom">
+                    <p>We are a leading stock broking and wealth management firm, headquartered in India. We operate on a unique retail focussed stock..</p>
+                    <a class="text-more-info text-primary-hover" href="">Read more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Collumn 2 -->
+            <div class="s-12 m-12 l-4 margin-m-bottom-2x">
+              <h4 class="text-uppercase text-strong">Contact Us</h4>
+              <div class="line">
+                <div class="s-1 m-1 l-1 text-center">
+                  <i class="icon-placepin text-primary text-size-12"></i>
+                </div>
+                <div class="s-11 m-11 l-11 margin-bottom-10">
+                  <p><b>Adress:</b>  #280, 3rd Floor, 20th Main Rd, Vijayanagar, Govindaraja Nagar Ward, PF Layout, Vijayanagar Bengaluru, Karnataka 560040</p>
+                </div>
+              </div>
+              <div class="line">
+                <div class="s-1 m-1 l-1 text-center">
+                  <i class="icon-mail text-primary text-size-12"></i>
+                </div>
+                <div class="s-11 m-11 l-11 margin-bottom-10">
+                  <p><a href="/" class="text-primary-hover"><b>E-mail:</b> lucrative@lasolutions.in</a></p>
+                </div>
+              </div>
+              <div class="line">
+                <div class="s-1 m-1 l-1 text-center">
+                  <i class="icon-smartphone text-primary text-size-12"></i>
+                </div>
+                <div class="s-11 m-11 l-11 margin-bottom-10">
+                  <p><b>Phone:</b>+919742228860</p>
+                </div>
+              </div>
+              <div class="line">
+                <div class="s-1 m-1 l-1 text-center">
+                  <i class="icon-twitter text-primary text-size-12"></i>
+                </div>
+                <div class="s-11 m-11 l-11 margin-bottom-10">
+                  <p><a href="#" class="text-primary-hover"><b>08048535350, 08048535351</b></a></p>
+                </div>
+              </div>
+              
+            </div>
+            
+            <!-- Collumn 3 -->
+            <div class="s-12 m-12 l-4">
+              <h4 class="text-uppercase text-strong">Leave a Message</h4>
+              <form class="customform text-white">
+                <div class="line">
+                  <div class="margin">
+                    <div class="s-12 m-12 l-6">
+                      <input name="email" class="required email border-radius" placeholder="Your e-mail" title="Your e-mail" type="text" />
+                    </div>
+                    <div class="s-12 m-12 l-6">
+                      <input name="name" class="name border-radius" placeholder="Your name" title="Your name" type="text" />
+                    </div>
+                  </div>
+                </div>
+                <div class="s-12">
+                  <textarea name="message" class="required message border-radius" placeholder="Your message" rows="3"></textarea>
+                </div>
+                <div class="s-12"><button class="submit-form button background-primary border-radius text-white" type="submit">Submit Button</button></div> 
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr class="break margin-top-bottom-0" style="border-color: rgba(0, 38, 51, 0.80);">
+      
+      <!-- Bottom Footer -->
+      <section class="padding background-dark">
+       <div class="line">
+          <div class="s-12 l-6">
+            <p class="text-size-12">© Copyright Lucrative Financial Solutions.</p>
+            <p class="text-size-12">All Rights Reserved.</p>
+          </div>
+          <div class="s-12 l-6">
+            <a class="right text-size-12" href="#" >Design and coding<br> by Lucrative Team</a>
+          </div>
+        </div>
+      </section>
+    </footer> 
+    <script type="text/javascript" src="js/responsee.js"></script>
+    <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
+    <script type="text/javascript" src="js/template-scripts.js"></script>
+     	<!--zoom in files-->
+	<script src="zoomin/js/plugins.js"></script>
+	<script src="zoomin/js/scripts.js"></script>
+	<!-- script for calculating EMI -->
+	<script>
+function EmiCalculaor(){
+    
+   
+ var month = $("#emiMonth").val();
+ var rate = $("#InterestRate").val();
+ var pamt = $("#prncipleAmount").val();
+  
+  var monthlyInterestRatio = (rate/100)/12;
+  var monthlyInterest = (monthlyInterestRatio*pamt);
+     var top = Math.pow((1+monthlyInterestRatio),month);
+         var bottom = top -1;
+         var sp = top / bottom;
+         var emi = ((pamt * monthlyInterestRatio) * sp);
+  var result = emi.toFixed(2);
+  var totalAmount = emi*month;
+  var yearlyInteret = totalAmount-pamt;
+  var downPayment = pamt*(20/100);
+     //alert(emi);
+  $("#result").empty();
+  $("#result").append("Your EMI = "+result);
+    
+}
+</script>
+   </body>
+</html>

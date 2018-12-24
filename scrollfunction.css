@@ -1,0 +1,109 @@
+			*,*:before,*:after {box-sizing:inherit;margin:0; padding:0; border:0 none; position: relative;}
+html {
+    background: #000;
+    box-sizing:border-box;
+    font-family: 'Vollkorn', sans-serif;
+    font-size: 1rem;
+    color: #000;
+}
+
+@media screen and (min-width: 50px) {
+     .scd {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #figu{
+        background: #eee;
+        width: calc( 50% + 1px);
+        height: 75vh;
+        margin: 0 auto 10vh 0;
+        position: sticky;
+        top: 0;
+        overflow: hidden;
+     
+            }
+
+    #sax {
+        background: #e5e5e5;
+        width: calc(50% + 1px);
+        height: 75vh;
+        margin: 0 0 10vh auto;
+        position: sticky;
+        top: 0;
+        // overflow: hidden;
+        padding: 5vmin;
+    
+            }
+    #figu:nth-of-type(1),
+    #sax:nth-of-type(1) {
+        margin: 0 0 10vh 0;
+        width: 50%;
+            }
+    #figu:nth-of-type(2n) {
+        margin: 0 0 10vh auto;
+        box-shadow: -4px -4px 8px rgba(0,0,0,.4);
+            }
+    #sax:nth-of-type(2n) {
+        margin: 0 auto 10vh 0;
+        box-shadow: 4px -4px 8px rgba(0,0,0,.4);
+        }
+    #figu:last-of-type,
+    #sax:last-of-type {
+        margin-bottom: 0;
+    }
+    #sax::before {
+        background: inherit;
+        z-index: 1;
+        content: '';
+        position: absolute;
+        top: 50%;
+        left:0;
+        width: 7vmin;
+        height: 7vmin;
+        transform: translate(calc(-50% + 1px), -50%) rotate(-45deg);
+        clip-path: polygon(-15% -15%, 110% 0%, 0% 110%);
+        box-shadow: -4px -2px 8px rgba(0,0,0,.4);
+        border-radius: 1.5vmin 0 0 0;
+    }
+    #sax:nth-of-type(2n)::before {
+        left:auto;
+        right: 0;
+        transform: translate(calc(50% - 1px), -50%) rotate(-45deg) scale(-1);
+    }
+   
+    #figu img {
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+    #dcs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        padding: 1rem;
+    }
+    .ech1 {
+		margin-bottom:45px;
+        font-size: calc(1vmin + 2vmax);
+        text-align: center;
+        font-weight: 700;
+        line-height: 1.6rem;
+        word-spacing: .5rem;
+		color:#27c0ca !important;
+    }
+    .szp {
+        text-align: right;
+        width: 100%;
+        font-family: "Cormorant", serif;
+        font-weight: 400;
+		text-align:justify;
+		font-size: 0.95rem;
+		line-height: 1.6rem;
+		overflow:hidden;
+ 
+    }
+   
+   
+}
